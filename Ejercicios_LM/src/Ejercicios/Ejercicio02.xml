@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Realiza un XML, y su correspondiente DTD, que permita guardar información sobre correos 
+electrónicos (en plural). Piensa en que un correo electrónico:
+Puede tener varios destinatarios, y cada uno puede ser de tipo "para", "cc", "cco".
+Debe tener un asunto y un texto que actúe como cuerpo del mensaje.
+Puede contener, o no, archivos adjuntos. Cada archivo deberá tener un nombre, un mime type y 
+una cifra que indicara la longitud del archivo adjunto. -->
+<!DOCTYPE correos_electronicos [
+	<!ELEMENT correos_electronicos (correo_electronico+)>
+	<!ELEMENT correo_electronico (usuario, destinatario+, asunto, cuerpo, archivos*)>
+	<!ELEMENT usuario (#PCDATA)>
+	<!ELEMENT destinatario (usuario_destinatario, tipo)>
+	<!ELEMENT tipo (para | cc | cco)>
+	<!ELEMENT asunto (#PCDATA)>
+	<!ELEMENT cuerpo (#PCDATA)>
+	<!ELEMENT archivos (nombre, mime_type, longitud)>
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT mime_type (#PCDATA)>
+	<!ELEMENT longitud (#PCDATA)>
+]>
+ <correos_electronicos>
+	<correo_electronico>
+		<usuario>Pepito</usuario>
+		<destinatario>
+			<usuario_destinatario>juan.pepito@maria.lol</usuario_destinatario>
+			<tipo><para/></tipo>	
+		</destinatario>
+		<destinatario>
+			<usuario_destinatario>pepe@tu.madre</usuario_destinatario>
+			<tipo><cc/></tipo>
+		</destinatario>
+		<destinatario>
+			<usuario_destinatario>asdasd@asdasd.asd</usuario_destinatario>
+			<tipo><cco/></tipo>
+		</destinatario>
+		<asunto>Hola :D</asunto>
+		<cuerpo>Texto del mensaje</cuerpo>
+		<archivos>
+			<nombre>Nombre</nombre>
+			<mime_type>plain/text</mime_type>
+			<longitud>???</longitud>
+		</archivos>		
+	</correo_electronico>	
+</correos_electronicos> 
+
+	
+
