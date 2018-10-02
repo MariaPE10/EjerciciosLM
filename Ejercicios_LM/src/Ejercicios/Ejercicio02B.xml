@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE correos_electronicos SYSTEM "Ejercicio02B.dtd">
+<correos_electronicos>
+	<correo_electronico>
+		<usuario>Pepito</usuario>
+		<destinatario>
+			<para>juan@gmail.com</para>
+			<cc>rafa@gmail.com</cc>
+			<cco>antoia@gmail.com</cco>
+		</destinatario>
+		<destinatario>
+			<cc>rafa@gmail.com</cc>
+			<cco>antoia@gmail.com</cco>
+		</destinatario>
+		<destinatario>
+			<para>juan@gmail.com</para>
+		</destinatario>
+		<asunto>Hola :D</asunto>
+		<cuerpo>Texto del mensaje</cuerpo>
+		<archivos>
+			<nombre>Nombre</nombre>
+			<mime_type>plain/text</mime_type>
+			<longitud>834KB</longitud>
+		</archivos>		
+	</correo_electronico>	
+</correos_electronicos> 

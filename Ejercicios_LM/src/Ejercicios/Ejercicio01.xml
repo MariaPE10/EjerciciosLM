@@ -18,7 +18,6 @@ elemento vacío. Recuerda que una placa base no puede tener más de un fabricant
 	 DENTRO DE PARENTESIS DE FORMA DESORDENDA Y ADEMAS PONER UNA CARDINALIDAD -->
 	 
 <!DOCTYPE tarjetas SYSTEM "Ejercicio01.dtd">
-
 <tarjetas>
 	<placasbase>  <!-- conjunto de elementos de tipo placabase  -->
 		<microprocesador>Tipo de microprocesador</microprocesador>
