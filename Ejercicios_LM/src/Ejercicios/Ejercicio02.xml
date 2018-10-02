@@ -5,12 +5,13 @@ Puede tener varios destinatarios, y cada uno puede ser de tipo "para", "cc", "cc
 Debe tener un asunto y un texto que actúe como cuerpo del mensaje.
 Puede contener, o no, archivos adjuntos. Cada archivo deberá tener un nombre, un mime type y 
 una cifra que indicara la longitud del archivo adjunto. -->
+
 <!DOCTYPE correos_electronicos [
 	<!ELEMENT correos_electronicos (correo_electronico+)>
 	<!ELEMENT correo_electronico (usuario, destinatario+, asunto, cuerpo, archivos*)>
 	<!ELEMENT usuario (#PCDATA)>
 	<!ELEMENT destinatario (usuario_destinatario, tipo)>
-	<!ELEMENT tipo (para | cc | cco)>
+	<!ELEMENT tipo (para | cc | cco)*>
 	<!ELEMENT asunto (#PCDATA)>
 	<!ELEMENT cuerpo (#PCDATA)>
 	<!ELEMENT archivos (nombre, mime_type, longitud)>
