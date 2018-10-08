@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensajes [
+  <!ELEMENT mensajes (mensaje)*>
+  <!ELEMENT mensaje (de, para, hora, texto)>
+  <!ELEMENT de (#PCDATA)>
+  <!ELEMENT para (#PCDATA)>
+  <!ELEMENT hora (#PCDATA)>
+  <!ELEMENT texto (#PCDATA | strong)*>  
+  <!ELEMENT strong (#PCDATA)>
+]>
+
+<mensajes>
+  <mensaje>
+    <de>Pepe (pepe@example.com)</de>
+    <para>Juan (juan@example.com)</para>
+    <hora>28/02/2011 17:48:23,61</hora>
+    <texto>¿Hola, Juan, qué haces?</texto>
+  </mensaje>
+  <mensaje>
+    <de>Juan (juan@example.com)</de>
+    <para>Pepe (pepe@example.com)</para>
+    <hora>28/02/2011 17:54:20,87</hora>
+    <texto>Aquí, aprendiendo <strong>XML</strong></texto>
+  </mensaje>
+</mensajes>
+
+<!-- El elemento TEXTO es un elemento doble -->
+
+<!-- ? -> Un elemento puede aparecer 0 ó 1 vez.
+	 * -> Un elemento puede aparecer de 0 a una cantidad ilimitada de veces.
+	 + -> Un elemento puede aparecer de 1 a una cantidad ilimitada de veces. -->
+	 
+<!--<!ELEMENT placasbase (microprocesador | memoria | modelo | fabricante)*>  PERMITE PONER CADA ELEMENTO
+DENTRO DE PARENTESIS DE FORMA DESORDENDA -->
+<!-- <!ELEMENT placasbase (microprocesador?, memoria+, modelo?, fabricante?)> PERMITE PONER CADA ELEMENTO
+DENTRO DE PARENTESIS DE FORMA DESORDENDA Y ADEMAS PONER UNA CARDINALIDAD -->
+<!-- Un valor de texto significará simplemente un valor por defecto.
+#IMPLIED. El atributo es opcional
+#REQUIRED. El atributo es obligatorio, pero no tiene valor por defecto.
+#FIXED. El atributo es obligatorio y tiene por defecto un valor, el único que puede tomar.
+
+Los valores para "tipoAtributo" son:
+CDATA. Caracteres sin etiquetas.
+ENTITY. Una entidad, que se declarará en el DTD. No estudiaremos las entidades hasta un poco más adelante.
+ENTITIES. Lista de nombres de entidades, que se deben especificar en el DTD.
+
+Enumeración. Lista de valores excluyentes entre si. Se puede elegir uno de entre todos.
+ID. Identificador único de un elemento en el XML.
+IDREF. Referencia a un identificador existente. El valor del campo debe comenzar por letra y, a continuación, puede contener los caracteres válidos en los campos de tipo NMTOKEN.
+IDREFS. Varios referencias a identificadores existentes.
+NMTOKEN. Nombre sin espacios en blanco en su interior. Los caracteres permitidos en el valor del campo de tipo NMTOKEN son letras, digitos, el punto, el guión, el subrayado y los dos puntos.
+NMTOKENS. Lista de nombres con espacios en blanco en su interior.
+NOTATION. Notación, que debe ser declarada en el DTD. -->
+	 
+	 
+	 
+	 
+	 
+	 

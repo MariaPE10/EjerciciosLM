@@ -8,15 +8,6 @@ modelo, fabricante. Debes guardar especial atención a la cardinalidad de cada e
 El fabricante podrá ser "Asus" o "Intel". El valor del fabricante no puede ser un texto, tiene que ser un 
 elemento vacío. Recuerda que una placa base no puede tener más de un fabricante, ni menos. Piensa en la cardinalidad. -->
 
-<!-- ? -> Un elemento puede aparecer 0 ó 1 vez.
-	 * -> Un elemento puede aparecer de 0 a una cantidad ilimitada de veces.
-	 + -> Un elemento puede aparecer de 1 a una cantidad ilimitada de veces. -->
-	 
-	 <!--<!ELEMENT placasbase (microprocesador | memoria | modelo | fabricante)*>  PERMITE PONER CADA ELEMENTO
-	 DENTRO DE PARENTESIS DE FORMA DESORDENDA -->
-	<!-- <!ELEMENT placasbase (microprocesador?, memoria+, modelo?, fabricante?)> PERMITE PONER CADA ELEMENTO
-	 DENTRO DE PARENTESIS DE FORMA DESORDENDA Y ADEMAS PONER UNA CARDINALIDAD -->
-	 
 <!DOCTYPE tarjetas SYSTEM "Ejercicio01.dtd">
 <tarjetas>
 	<placasbase>  <!-- conjunto de elementos de tipo placabase  -->
