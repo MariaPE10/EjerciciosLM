@@ -2,11 +2,11 @@
 <!DOCTYPE cuadros [
   <!ELEMENT cuadros (cuadro*)>
   <!ELEMENT cuadro EMPTY>
-  <!ATTLIST cuadro titulo ID #REQUIRED>
+  <!ATTLIST cuadro titulo ID #REQUIRED> <!--Un identificador es unico para cada variable-->
   <!ATTLIST cuadro autor CDATA #REQUIRED>
 ]>
 
 <cuadros>
-  <cuadro titulo="Adán y Eva" autor="Alberto Durero" />
-  <cuadro autor="Lucas Cranach, el viejo" titulo="Adán y Eva" />
+  <cuadro titulo="AdanyEva" autor="Alberto Durero" />
+  <cuadro autor="Lucas Cranach, el viejo" titulo="AdányEva" />
 </cuadros>
