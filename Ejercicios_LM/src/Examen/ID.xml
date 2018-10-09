@@ -12,3 +12,9 @@
   <jugador nombre="Diego Armando Maradona" codigo="j3" />
   <jugador nombre="Johan Cruyff" codigo="j4" />
 </futbol>
+
+<!-- Los ID no pueden ser solo de numeros, tienen que ser de tipo NMTOKENS.
+	 Tiene que ser unico para cada elemento. -->
+	 
+<!--  Los IDREF siempre tienen que refrirse a un ID.-->
+<!--  Los IDREFS siempre tienen que refrirse a un ID. Pueden ser varios ID's separados por un espacio -->

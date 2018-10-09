@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- Frutas y árboles de los que proceden -->
+<!DOCTYPE arboles [
+  <!ENTITY % caracteristicas "nombre CDATA #REQUIRED nombrecientifico CDATA #IMPLIED">
+  
+  <!ELEMENT arboles (arbol | arbusto)*>
+  <!ELEMENT arbol (frutal | nofrutal)*>
+  
+  <!ELEMENT frutal (#PCDATA | fruta)*>
+  <!ELEMENT fruta EMPTY>
+  <!ELEMENT nofrutal EMPTY>
+  <!ATTLIST fruta color CDATA #REQUIRED
+  					hueso >
+  <!ATTLIST nofrutal %caracteristicas;>
+  
+  <!ELEMENT arbusto EMPTY>
+  <!ATTLIST arbusto nombre CDATA #REQUIRED >
+]>
+
+<arboles>
+	<arbol>
+		<frutal />
+		<nofrutal/>
+	</arbol>
+	<arbusto nombre="Morera"/>
+</arboles>

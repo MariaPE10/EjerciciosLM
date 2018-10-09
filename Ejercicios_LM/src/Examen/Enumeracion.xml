@@ -12,3 +12,5 @@
   <album nombre="El otro yo del profesor Bacterio" fecha="1973"/>
   <album nombre="Los cacharros majaretas" fecha="1974"/>
 </albumesMortadelo>
+
+<!--  La fecha es una ENUMERACION hay que poner | entre cada opcion -->

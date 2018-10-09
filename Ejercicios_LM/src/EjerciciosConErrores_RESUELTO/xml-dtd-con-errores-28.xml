@@ -2,7 +2,7 @@
 <!DOCTYPE resoluciones [
   <!ELEMENT resoluciones (resolucion)*>
   <!ELEMENT resolucion EMPTY>
-  <!ATTLIST resolucion nombre NMTOKENS #REQUIRED>
+  <!ATTLIST resolucion nombre CDATA #REQUIRED>
   <!ATTLIST resolucion alto CDATA #REQUIRED>
   <!ATTLIST resolucion ancho CDATA #REQUIRED>
 ]>
