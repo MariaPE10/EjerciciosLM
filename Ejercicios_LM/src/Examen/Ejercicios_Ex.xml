@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- Frutas y árboles de los que proceden -->
+<!DOCTYPE arboles SYSTEM "Ejercicios_Ex.dtd">
 <arboles>
 	<arbol>
-		<frutal />
-		<nofrutal/>
+		<frutal identificador ="a1"> Es un arbol muy bonito. &flores;
+			<fruta nombre="Manzana" hueso="Si" color="rojo" pertenece_a="a1"/>
+			<fruta nombre="Pera" hueso="Si" pertenece_a="a1"/>
+		</frutal>
+		<frutal identificador ="a2"> Es un arbol robusto
+			<fruta nombre="Naranjo" hueso="Si" color="naranja" pertenece_a="a2"/>
+		</frutal>
 	</arbol>
-	<arbusto nombre="Morera"/>
+	<arbol>
+		<arbusto nombre="Tomillo" nombrecientifico="Tomillus Alcacicus"/>
+		<arbusto nombre="Zarza" nombrecientifico="Morus Dulce" familia_de="a3"/>
+		<arbusto nombre="Romero" nombrecientifico="Romerus" familia_de="a1 a2"/>
+	</arbol>
+	<arbol>
+		<frutal identificador ="a3"> Es un arbol con puas &flores;
+			<fruta nombre="Limonero" hueso="Si" color="amarillo" pertenece_a="a3"/>
+		</frutal>
+		<nofrutal nombre="Pino" nombrecientifico="Pinus Pinchoso"/>
+	</arbol>
 </arboles>
