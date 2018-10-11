@@ -1,19 +1,19 @@
-  <!ENTITY % caracteristicas "nombre CDATA #REQUIRED nombrecientifico CDATA #IMPLIED">
-  <!ENTITY flores "Este arbol/arbusto tiene unas flores muy bonitas">
-  <!ELEMENT arboles (arbol+)>
-  <!ELEMENT arbol (frutal*, nofrutal?, arbusto*)>
+<!ENTITY % caracteristicas "nombre CDATA #REQUIRED nombrecientifico CDATA #IMPLIED">
+<!ENTITY flores "Este arbol/arbusto tiene unas flores muy bonitas">
+<!ELEMENT arboles (arbol+)>
+<!ELEMENT arbol (frutal*, nofrutal?, arbusto*)>
   
-  <!ELEMENT frutal (#PCDATA | fruta)*>
-  <!ELEMENT fruta EMPTY>
-  <!ELEMENT nofrutal EMPTY>
+<!ELEMENT frutal (#PCDATA | fruta)*>
+<!ELEMENT fruta EMPTY>
+<!ELEMENT nofrutal EMPTY>
   
-  <!ATTLIST frutal identificador ID #REQUIRED>
-  <!ATTLIST fruta nombre CDATA #REQUIRED
-  					hueso CDATA #FIXED "Si"
-  					color (rojo | amarillo | morado | verde | naranja) #IMPLIED
-  					pertenece_a IDREF #REQUIRED>
- <!ATTLIST nofrutal %caracteristicas;>
+<!ATTLIST frutal identificador ID #REQUIRED>
+<!ATTLIST fruta nombre CDATA #REQUIRED
+  				hueso CDATA #FIXED "Si"
+				color (rojo | amarillo | morado | verde | naranja) #IMPLIED
+  				pertenece_a IDREF #REQUIRED>
+<!ATTLIST nofrutal %caracteristicas;>
   
-  <!ELEMENT arbusto EMPTY>
-  <!ATTLIST arbusto %caracteristicas;
+<!ELEMENT arbusto EMPTY>
+<!ATTLIST arbusto %caracteristicas;
   					familia_de IDREFS #IMPLIED>
