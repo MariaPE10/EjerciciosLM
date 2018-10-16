@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="superheroe" type="nombreSuperheroe"/>
+  
+  <xs:simpleType name="nombreSuperheroe">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{8}[A-Z]" />
+    </xs:restriction>  
+  </xs:simpleType>
+</xs:schema>
+
+<!-- formas de representar información:
+
+    . -> Representa cualquier caracter.
+    \w -> Cualquier letra, mayúscula o minúscula.
+    \d -> Un dígito.
+    \D -> Cualquier carácter que no sea un dígito.
+    \s -> Cualquier carácter similar a un espacio, como tabuladores, saltos de línea, etc.
+    \S -> Cualquier carácter que no sea similar a un espacio.
+    [abc] -> Cualquiera de los caracteres contenidos dentro de los corchetes, sólo se permitirá un único carácter.
+    [A-Z] -> Intervalo de valores, se permitirá cualquiera que este dentro del intervalo. Recuerda que los caracteres están representados a través de datos numéricos.
+    [^abc] -> Significa cualquier caracter que no sea alguno de los contenidos entre corchetes.
+    (a|b) -> uno de los dos caracteres. A efectos prácticos sería igual a [ab].
+    (pa){2} -> (pa) es un bloque de caracteres y las llaves con el 2, indica el nº de veces que tiene que repetirse.
+
+En cuanto a la cardinalidad de las ocurrencias de los caracteres tenemos:
+
+    ? -> De 0 a 1 ocurrencias.
+    * -> De 0 a infinitas ocurrencias.
+    + -> De 1 a infinitas ocurrencias.
+    {n} -> n ocurrencias.
+    {n,m} -> Mínimo de n ocurrencias y máximo de m.
+    {n,} -> Mínimo de n ocurrencias y máximo de infinitas.
+
+De esta forma podremos crear las siguientes expresiones regulares:
+
+    \d{4,8} -> Sucesión de dígitos de un mínimo de 4 y un máximo de 8.
+    \d{8}[A-Z] -> DNI con letra final en mayúscula.
+    \w+ -> de 1 a infinitos caracteres
+    \w+@\w+[.]\w+ -> Correo electrónico
+    \d{1,3}[.]\d{1,3}[.]\d{1,3}[.]\d{1,3} -> Dirección IPv4 -->
+    
+    
+    
