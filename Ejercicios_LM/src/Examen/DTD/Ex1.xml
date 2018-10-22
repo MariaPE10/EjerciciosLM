@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE arboles SYSTEM "Ex1.dtd">
+<papeleria>
+	<tipo>
+		<papel>
+			<cartulina tamaño= "A5"/>
+			<cuadernos><pastadura valor = "Si"/>Cuaderno tamaño A2</cuadernos>
+			<libros>Los pilares de la Tierra. &comentario; </libros>
+			<cartulina tamaño= "A2"/>
+			<cartulina tamaño= "A3"/>
+		</papel>
+		<escritura>
+			<boligrafos color="azul">Escribe muy bien</boligrafos>
+			<boligrafos color="rojo"></boligrafos>
+			<lapices marca="bic" escriben_en="A2">Lo uso en clase de dibujo</lapices>
+			<rotuladores marca= "crayola" sirven_para="A2 A5"/>
+		</escritura>
+		<escritura>
+			<boligrafos color="verde"> &comentario; </boligrafos>
+			<lapices marca="pilot" escriben_en="A5">Lo uso en clase de dibujo</lapices>
+			<rotuladores marca= "carioca" sirven_para="A2 A3"/>
+		</escritura>
+	</tipo>
+</papeleria>

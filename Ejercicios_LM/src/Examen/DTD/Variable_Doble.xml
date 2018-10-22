@@ -51,6 +51,8 @@ IDREFS. Varios referencias a identificadores existentes.
 NMTOKEN. Nombre sin espacios en blanco en su interior. Los caracteres permitidos en el valor del campo de tipo NMTOKEN son letras, digitos, el punto, el guión, el subrayado y los dos puntos.
 NMTOKENS. Lista de nombres con espacios en blanco en su interior.
 NOTATION. Notación, que debe ser declarada en el DTD. -->
+
+<!-- &lt; (<), &gt; (>), &amp; (&), &apos; (') y &quot; (") -->
 	 
 	 
 	 

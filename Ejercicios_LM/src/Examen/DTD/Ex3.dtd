@@ -1,0 +1,22 @@
+<!ENTITY % nombre "nombre CDATA #REQUIRED">
+<!ENTITY comentario "Esta habilidad es muy potente">
+
+<!ELEMENT riot (leagueoflegends)>
+<!ELEMENT leagueoflegends (personaje)*>
+<!ELEMENT personaje (clase, raza, sexo?, habilidades+)>
+<!ELEMENT habilidades (#PCDATA | magicas | fisicas)*>
+<!ELEMENT magicas EMPTY>
+<!ELEMENT fisicas EMPTY>
+<!ELEMENT clase EMPTY>
+<!ELEMENT raza (#PCDATA)>
+<!ELEMENT sexo EMPTY>
+
+
+<!ATTLIST personaje %nombre;
+					tipo ID #REQUIRED
+					invocacion NMTOKEN #FIXED "Si" >
+<!ATTLIST clase nombre IDREFS #REQUIRED>
+<!ATTLIST sexo valor (masculino | femenino | desconocido) #IMPLIED>
+<!ATTLIST raza %nombre;>
+<!ATTLIST fisicas tipo IDREF #REQUIRED>
+<!ATTLIST magicas tipo IDREF #REQUIRED>

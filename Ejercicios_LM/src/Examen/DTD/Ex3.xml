@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE arboles SYSTEM "Ex3.dtd">
+<riot>
+	<leagueoflegends>
+		<personaje nombre= "Xayah" tipo= "adc" invocacion="Si"> 
+			<clase nombre= "adc"/>
+			<raza nombre= "Vastaya"> Animales con apariencia de persona </raza>
+			<sexo valor= "femenino"/>
+			<habilidades><fisicas tipo="adc"/>Dagas afiladas</habilidades>
+			<habilidades> Lluvia de plumas &comentario;
+				<magicas tipo="mago"/>
+			</habilidades>
+		</personaje>
+		<personaje nombre= "Rakan" tipo= "support" invocacion="Si">
+			<clase nombre= "support mago"/>
+			<raza nombre= "Vastaya"> Animales con apariencia de persona </raza>
+			<sexo valor= "masculino"/>
+			<habilidades> Sanacion
+				<magicas tipo="support"/>
+			</habilidades>
+		</personaje>
+		<personaje nombre= "Ahri" tipo= "mago">
+			<clase nombre= "mago"/>
+			<raza nombre= "Vastaya"> Animales con apariencia de persona </raza>
+			<habilidades> Orbe de la perdición &comentario;
+				<magicas tipo ="mago"/>
+			</habilidades>
+		</personaje>
+	</leagueoflegends>
+</riot>

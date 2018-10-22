@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE arboles SYSTEM "Ex2.dtd">
+<tienda>
+	<articulos>
+		<relojes>
+			<marca nombre="rolex"> &comentario;
+				<reloj fecha_creacion="12-05-2018" fabricante="rolex" color="blanco" pila_incluida="Si">
+					<precio>32 Euros</precio>
+					<piezas fecha_creacion="23-12-2013" fabricante="rolex"/>
+					<descuento><fecha>de Enero a Febrero</fecha> 10% de descuento</descuento>
+				</reloj>
+				<reloj fecha_creacion="04-07-2018" fabricante="rolex" color="plata">
+					<precio>32 Euros</precio>
+					<piezas fecha_creacion="23-12-2013" fabricante="rolex"/>
+				</reloj>
+			</marca>
+			<marca nombre="ratio">
+				<reloj fecha_creacion="12-05-2018" fabricante="ratio" color="negro" pila_incluida="Si">
+					<piezas fecha_creacion="23-12-2013" fabricante="ratio"/>
+					<precio>32 Euros</precio>
+					<descuento><fecha>de Enero a Febrero</fecha> 25% de descuento</descuento>
+				</reloj>
+				<reloj fecha_creacion="20-02-2015" fabricante="ratio">
+					<precio>32 Euros</precio>
+					<piezas fecha_creacion="23-12-2013" fabricante="rolex ratio"/>
+				</reloj>
+			</marca>
+		</relojes>
+	</articulos>
+</tienda>

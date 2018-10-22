@@ -1,0 +1,21 @@
+<!ENTITY comentario "Esta marca hace relojes de muy buena calidad y comodos">
+<!ENTITY % caracteristicas "fecha_creacion CDATA #REQUIRED">
+
+<!ELEMENT tienda (articulos)>
+<!ELEMENT articulos (relojes*)>
+<!ELEMENT relojes (marca+)>
+<!ELEMENT marca (#PCDATA | reloj)*>
+<!ELEMENT reloj (precio | piezas | descuento?)*>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT piezas EMPTY>
+<!ELEMENT descuento (#PCDATA | fecha)*>
+<!ELEMENT fecha (#PCDATA)>
+
+<!ATTLIST marca	nombre ID #REQUIRED>
+
+<!ATTLIST piezas %caracteristicas;
+					fabricante IDREFS #REQUIRED>
+<!ATTLIST reloj %caracteristicas;
+				fabricante IDREF #REQUIRED
+				color (negro | blanco | plata | oro) #IMPLIED
+				pila_incluida NMTOKEN #FIXED "Si">

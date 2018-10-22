@@ -1,0 +1,24 @@
+<!ENTITY comentario "Es muy bonito">
+<!ENTITY % marcas "marca CDATA #REQUIRED">
+
+<!ELEMENT papeleria (tipo)>
+<!ELEMENT tipo (papel?, escritura+)>
+<!ELEMENT escritura (boligrafos*, lapices, rotuladores)>
+<!ELEMENT papel (cuadernos | libros | cartulina)*>
+<!ELEMENT cartulina EMPTY >
+<!ELEMENT libros (#PCDATA)>
+<!ELEMENT cuadernos (#PCDATA | pastadura)*>
+<!ELEMENT pastadura EMPTY>
+<!ELEMENT rotuladores EMPTY>
+<!ELEMENT boligrafos ANY>
+<!ELEMENT lapices (#PCDATA)>
+
+<!ATTLIST boligrafos color (azul | rojo | verde | negro) #REQUIRED>
+<!ATTLIST lapices %marcas;
+					dureza CDATA #IMPLIED
+					escriben_en IDREF #REQUIRED>
+<!ATTLIST pastadura valor NMTOKEN #FIXED "Si"> 
+<!ATTLIST cartulina tamaño ID #REQUIRED>
+<!ATTLIST rotuladores %marcas;
+					sirven_para IDREFS #REQUIRED>
+
