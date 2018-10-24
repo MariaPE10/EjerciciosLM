@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE arboles SYSTEM "ExamenMariaPerezEscalera.dtd">
+<obrador>
+	<receta>
+		<dulces>
+			<tradicionales trabajador="Maria">
+				<nombreT nombre = "Huesos de santo" realizado_por="Maria"/>
+				<ingredientes> Harina de almendra, yemas y azúcar</ingredientes>
+				<festividad fiesta="semana_santa"/>
+			</tradicionales>
+		</dulces>
+	</receta>
+	<receta>
+		<dulces>
+			<vanguardia>
+				<nombreV nombre = "Cupula de chocolate con aire de avellana"/>
+				<tecnicas nombre = "Atemperado" id="T1">
+					<utensilios nombre= "Globos de plastico" se_utilizan_en="T1"/>
+					<utensilios nombre= "Espatulas" se_utilizan_en="T1 T2"/>
+				</tecnicas>
+				<sabor tipo ="avellana" dulce="Si"/>
+				<peso> &comentario; 220</peso>
+			</vanguardia>
+		</dulces>
+	</receta>
+	<receta>
+		<dulces>
+			<vanguardia>
+				<nombreV nombre = "Gelatina de fruta de la pasion con palomitas de vainilla"/>
+				<tecnicas nombre = "Gelificacion" id="T2">
+					<utensilios nombre= "Nitrogeno liquido" se_utilizan_en="T2"/>
+					<utensilios nombre= "Espatulas" se_utilizan_en="T1 T2"/>
+				</tecnicas>
+				<sabor tipo="vainilla" dulce="Si"/>
+				<sabor tipo="fruta de la pasion"/>
+			</vanguardia>
+		</dulces>
+	</receta>
+</obrador>

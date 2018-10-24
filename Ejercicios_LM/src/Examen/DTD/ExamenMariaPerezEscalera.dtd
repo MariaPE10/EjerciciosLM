@@ -1,0 +1,30 @@
+<!ENTITY % nombre "nombre CDATA #REQUIRED">
+<!ENTITY comentario "todos los pesos estan cogidos en gramos:">
+<!ELEMENT obrador (receta)*>
+<!ELEMENT receta (dulces)>
+<!ELEMENT dulces (tradicionales | vanguardia)>
+<!ELEMENT tradicionales (nombreT, ingredientes, (temporalidad | festividad))>
+<!ELEMENT vanguardia (nombreV, tecnicas, sabor+, peso?)>
+<!ELEMENT nombreT EMPTY>
+<!ELEMENT ingredientes (#PCDATA)>
+<!ELEMENT temporalidad EMPTY>
+<!ELEMENT festividad EMPTY>
+<!ELEMENT nombreV EMPTY>
+<!ELEMENT tecnicas (#PCDATA | utensilios)*>
+<!ELEMENT sabor EMPTY>
+<!ELEMENT peso (#PCDATA)>
+<!ELEMENT utensilios EMPTY>
+
+<!ATTLIST temporalidad epoca (invierno | primavera | verano | otoño) #REQUIRED>
+<!ATTLIST festividad fiesta (navidad | halloween | semana_santa) #IMPLIED>
+<!ATTLIST nombreT %nombre;
+					realizado_por IDREF #REQUIRED>
+<!ATTLIST nombreV %nombre;>
+<!ATTLIST utensilios nombre NMTOKENS #IMPLIED
+						se_utilizan_en IDREFS #REQUIRED>
+<!ATTLIST sabor tipo CDATA #REQUIRED
+				dulce CDATA #FIXED "Si">
+<!ATTLIST tecnicas %nombre;
+					id ID #REQUIRED>
+<!ATTLIST tradicionales trabajador ID #REQUIRED>
+
