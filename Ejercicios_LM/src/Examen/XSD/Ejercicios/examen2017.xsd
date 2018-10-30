@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="personaje" type="tipoPersonaje"/>
+	
+	<xs:complexType name="tipoPersonaje">
+		<xs:sequence>
+	  		<xs:element name="princesas" type="tipoPrincesas"  maxOccurs="unbounded"/>
+	  		<xs:element name="animales" type="tipoAnimales"/>
+	  		<xs:element name="personas" type="tipoPersonas"/>
+	  		<xs:element name="criaturasFicticias" type="tipoCriaturasFicticias" maxOccurs="unbounded"/>
+	  		<xs:element name="alienigenas" type="tipoAlienigenas" maxOccurs="unbounded"/>
+	  		<xs:element name="personajes" type="tipoPersonajes"/>
+	  	</xs:sequence>
+	</xs:complexType>
+	
+  	<!-- PERSONAJES -->
+  	<!-- Existe un atributo que toma su valor de una lista de posibles valores. -->	
+    <!-- Existe un atributo cuyo contenido debe ser un número dentro de un intervalo numérico determinado, por
+	ejemplo entre 100 y 1000. -->
+	<!-- Un código de usuario del tipo: primera letra del nombre, tres primeras letras del primer apellido,
+	tres primeras letras del segundo apellido y los tres últimos números del DNI -->
+  <xs:complexType name="tipoPersonajes">
+	<xs:attribute name="pelicula" type="listadoNombresPersonajes" />
+	<xs:attribute name = "numeroPersonajes" type= "cantidad"/>
+	<xs:attribute name = "codigo">
+		<xs:simpleType>
+  			<xs:restriction base="xs:string">
+  				<xs:pattern value="[A-Z]{7}[0-9]{3}"/> 
+  			</xs:restriction>
+  		</xs:simpleType>
+	</xs:attribute>
+  </xs:complexType>
+  
+  <!-- Listado de valores -->
+  <!-- Existe un tipo de datos simple creado con <xs:list>. -->
+  <xs:simpleType name="listadoNombresPersonajes">
+	<xs:list itemType="nombrePersonajes"/>
+  </xs:simpleType>
+  
+  <!-- Existe un tipo de datos simple creado con <xs:union>. -->
+  <!-- Union de las dos listas de valores que puede tomar el atributo pelicula en PERSONAJES -->
+  <xs:simpleType name="nombrePersonajes">
+  	<xs:union memberTypes="nombrePersonajesPersonas nombrePersonajesAnimales"/>
+  </xs:simpleType>
+  
+  <!-- Valores que puede tomar la lista -->
+  <xs:simpleType name="nombrePersonajesPersonas">
+  	<xs:restriction base="xs:string">
+  		<xs:enumeration value="Bella"/>
+  		<xs:enumeration value="Mulan"/>
+  	</xs:restriction>
+  </xs:simpleType>
+  
+  <!-- Valores que puede tomar la lista -->
+  <xs:simpleType name="nombrePersonajesAnimales">
+  	<xs:restriction base="xs:string">
+  		<xs:enumeration value="Mickey"/>
+  		<xs:enumeration value="Pongo"/>
+  		<xs:enumeration value="Duquesa"/>
+	</xs:restriction>
+  </xs:simpleType>
+  
+  <!-- Cantidad permitida entre 0 y 20 personajes -->
+  <xs:simpleType name="cantidad">
+  	<xs:restriction base="xs:integer">
+  		<xs:minInclusive value="0"/>
+  		<xs:maxInclusive value="20"/>
+  	</xs:restriction>
+  </xs:simpleType>
+  
+  <!-- ALIENIGENAS -->
+  <!-- Existe un elemento con atributos de diferentes tipos primitivos (al menos uno de cadena de caracteres 
+  y otro de tipo numérico). -->
+  <!-- Existe un elemento con atributos y contenido de tipo numérico. En este caso el numero representa
+  el codigo de experimento de cada alienigena-->
+   <xs:complexType name="tipoAlienigenas">
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="nombre" type="xs:string" />
+          <xs:attribute name="pelicula" type="xs:string" />
+          <xs:attribute name="manos" type="xs:integer" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  
+  <!-- PRINCESAS -->
+  <!-- Existe un elemento con atributos y contenido texto. -->
+  <!-- Una matrícula de coche española (tres caracteres en mayúscula y cuatro números) -->
+   <xs:complexType name="tipoPrincesas" mixed = "true">
+	   <xs:attribute name="nombre" type="xs:string" />
+	   <xs:attribute name="pelicula" type="xs:string" />
+	   <xs:attribute name="color" type="listadoColores" />
+	   <xs:attribute name = "codigo">
+			<xs:simpleType>
+  				<xs:restriction base="xs:string">
+  					<xs:pattern value="[A-Z]{3}[0-9]{4}"/> 
+  				</xs:restriction>
+  			</xs:simpleType>
+		</xs:attribute>
+  	 </xs:complexType>
+  	 
+    <!-- Una serie de diferentes colores. -->
+	<xs:simpleType name="listadoColores">
+		<xs:list itemType="colorPrincesas"/>
+  	</xs:simpleType>
+    
+	<xs:simpleType name="colorPrincesas">
+  		<xs:restriction base="xs:string">
+  			<xs:enumeration value="Rojo"/>
+  			<xs:enumeration value="Verde"/>
+  			<xs:enumeration value="Azul"/>
+  			<xs:enumeration value="Rosa"/>
+  			<xs:enumeration value="Amarillo"/>
+  		</xs:restriction>
+  	</xs:simpleType>
+  <!-- Personas, que pueden ser ricas o pobres, por eso hago uso de choice -->
+  <xs:complexType name="tipoPersonas">
+  	<xs:choice>
+  		<xs:element name="pobres" maxOccurs="unbounded">
+  			<xs:complexType mixed="true">
+  				<xs:attribute name="nombre"/>
+  				<xs:attribute name="pelicula"/>
+  			</xs:complexType>
+  		</xs:element>
+  		<xs:element name="ricos" maxOccurs="unbounded">
+  			<xs:complexType>
+  				<xs:attribute name="nombre"/>
+  				<xs:attribute name="pelicula"/>
+  			</xs:complexType>
+  		</xs:element>
+  	</xs:choice>
+  </xs:complexType>
+  
+  <!-- Animales -->
+  <!-- Existe un elemento cuyo contenido es vacío -->
+  <!-- Uso de sequence -->
+  <!-- Existe un elemento con contenido mixto (texto y subelementos). -->
+  <xs:complexType name="tipoAnimales" mixed="true">
+  	<xs:sequence>
+  		<xs:element name="raton" type="tipoRaton" maxOccurs="unbounded"/>
+  		<xs:element name="perro" type="tipoPerro" maxOccurs="unbounded"/>
+  		<xs:element name="gato" type="tipoGato" maxOccurs="unbounded"/>
+  		<xs:element name="otros" type="tipoOtros" maxOccurs="unbounded"/>
+  	</xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tipoRaton">
+	<xs:attribute name="nombre" type="xs:string"/>
+  	<xs:attribute name="pelicula" type="xs:string"/>
+  </xs:complexType>
+  
+    <xs:complexType name="tipoPerro">
+	<xs:attribute name="nombre" type="xs:string"/>
+  	<xs:attribute name="pelicula" type="xs:string"/>
+  </xs:complexType>
+  
+    <xs:complexType name="tipoGato">
+	<xs:attribute name="nombre" type="xs:string"/>
+  	<xs:attribute name="pelicula" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="tipoOtros">
+	<xs:attribute name="raza" type="xs:string"/>
+	<xs:attribute name="nombre" type="xs:string"/>
+  	<xs:attribute name="pelicula" type="xs:string"/>
+  </xs:complexType>
+  
+  
+</xs:schema>

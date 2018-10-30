@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen2017.xsd">
+	<princesas nombre = "Bella" pelicula = "La Bella y la Bestia" color = "Amarillo Rojo" codigo = "ABC1234"> Tiene version animada y real</princesas>
+	<princesas nombre = "Mulan" pelicula = "Mulan" color = "Azul Verde" codigo = "AEC5678"> Tiene segunda y tercera parte</princesas>
+	<animales> Hay muchas peliculas protagonizadas por animales
+		<raton nombre ="Mickey" pelicula = "Mickey: La mejor navidad "/>
+		<perro nombre = "Pongo" pelicula = "101 Dalmatas"/>
+		<gato nombre ="El gato con botas" pelicula = "Sherk"/>
+		<gato nombre ="Duquesa" pelicula = "Los Aristogatos"/>
+		<otros raza = "Leon" nombre = "Simba" pelicula = "El Rey Leon"/>
+		<otros raza = "Ciervo" nombre = "Bambi" pelicula = "Bambi"/>
+	</animales>
+	<personas>
+		<pobres nombre = "Lilo" pelicula = "Lilo y Stich"> Es una pelicula muy bonita y tiene segunda parte</pobres>
+		<!-- <ricos nombre = "Bestia" pelicula = "La Bella y la Bestia"/> -->
+	</personas>
+	<criaturasFicticias></criaturasFicticias>
+	<alienigenas nombre = "Stich" pelicula = "Lilo y Stich" manos = "4">626</alienigenas>
+	<alienigenas nombre = "Angel" pelicula = "Lilo y Stich" manos = "2">624</alienigenas>
+	<alienigenas nombre = "Sparky" pelicula = "Lilo y Stich" manos = "2">221</alienigenas>
+	<personajes pelicula = "Bella Mickey" numeroPersonajes = "2" codigo = "ABCDEFG123"/>
+</personaje>
