@@ -16,11 +16,7 @@
 	</personas>
 	<criaturasFicticias>
 		<elfo nombre = "Lanny" pelicula = "Los Elfos Navidenios" tamanio = "45"/>
-		<hada pelicula = "Campanilla">
-		  <nombre>Periwinkle</nombre>
-  		  <color>Azul y blanco</color>
- 		  <talento>Nieve y Escarcha</talento>
-		</hada>
+		<hada nombre = "Periwinkle" pelicula = "Campanilla" color = "Azul" talento = "Nieve y Escarcha"/>
 		<gnomo nombre = "Gnomeo" pelicula = "Gnomeo y Julieta" tamanio = "25"/>
 	</criaturasFicticias>
 	<alienigenas nombre = "Stich" pelicula = "Lilo y Stich" manos = "4">626</alienigenas>
