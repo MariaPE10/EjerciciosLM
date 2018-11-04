@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<personaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen2017.xsd">
+<personaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen2017-Solucion2.xsd">
 	<princesas nombre = "Bella" pelicula = "La Bella y la Bestia" color = "Amarillo Rojo" codigo = "ABC1234"> Tiene version animada y real</princesas>
 	<princesas nombre = "Mulan" pelicula = "Mulan" color = "Azul Verde" codigo = "AEC5678"> Tiene segunda y tercera parte</princesas>
 	<animales> Hay muchas peliculas protagonizadas por animales
 		<raton nombre ="Mickey" pelicula = "Mickey: La mejor navidad "/>
 		<perro nombre = "Pongo" pelicula = "101 Dalmatas"/>
-		<gato nombre ="El gato con botas" pelicula = "Sherk"/>
-		<gato nombre ="Duquesa" pelicula = "Los Aristogatos" />
+		<gato> 
+			<nombre>El gato con botas </nombre>
+			<pelicula>Sherk</pelicula>
+		</gato>
+		<gato> 
+			<nombre>Duquesa </nombre>
+			<pelicula>Los Aristogatos</pelicula>
+		</gato>
 		<otros raza = "Leon" nombre = "Simba" pelicula = "El Rey Leon" codigo = "00:17:FC:12:00:FF"/>
 		<otros raza = "Ciervo" nombre = "Bambi" pelicula = "Bambi" codigo = "00:17:FC:34:00:00"/>
 	</animales>

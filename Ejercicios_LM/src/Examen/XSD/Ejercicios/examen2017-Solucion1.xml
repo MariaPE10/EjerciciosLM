@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<personaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen2017.xsd">
+<personaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen2017-Solucion1.xsd">
 	<princesas nombre = "Bella" pelicula = "La Bella y la Bestia" color = "Amarillo Rojo" codigo = "ABC1234"> Tiene version animada y real</princesas>
 	<princesas nombre = "Mulan" pelicula = "Mulan" color = "Azul Verde" codigo = "AEC5678"> Tiene segunda y tercera parte</princesas>
 	<animales> Hay muchas peliculas protagonizadas por animales

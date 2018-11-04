@@ -24,23 +24,27 @@
   		</xs:sequence>
  	</xs:complexType>
 	
+	<!-- Te propongo esta otra solución. Se trata de cambiar <xs:all> y <xs:sequence> por <xs:choice> pero teniendo la precaución de incorporar el atributo maxOccurs="unbounded" 
+	en los <xs:choice>. De esta manera consigues algo muy parecido al comportamiento de <xs:all> ya que podrás tener la posibilidad de que el bloque <xs:choice> se repita
+	ilimitadas veces. A mí esta solución me gusta más.  Por cierto, no te preocupes por no saber esto, en clase siempre digo que yo os estoy enseñando la "punta del iceberg" de 
+	cada uno de los lenguajes que estuadiamos, ya sean lenguajes de programación o lenguajes de marcas. Un saludo. -->
+	
 	<xs:complexType name="tipoHada">
 		<xs:complexContent>
-      		<xs:extension base="caracHada">
-       			<xs:sequence>
+      		<xs:extension base="caracHada"> <!-- Existe un tipo de datos complejo que derive de otro tipo de datos complejo. -->
+       			<xs:choice maxOccurs="unbounded">
           			<xs:element name="talento" type="xs:string" />
-        		</xs:sequence>
+        		</xs:choice>
  				<xs:attribute name = "pelicula" type="xs:string"/>
      		 </xs:extension>
     	</xs:complexContent>
 	</xs:complexType>
 	
-	<!-- Uso de <xs:all> -->
 	<xs:complexType name="caracHada">
-      <xs:all>
+	  <xs:choice  maxOccurs="unbounded">
      	 <xs:element name="nombre" type="xs:string" />
     	 <xs:element name="color" type="xs:string" />
-  	  </xs:all> 
+  	  </xs:choice> 
   	</xs:complexType>
 	
  	<xs:complexType name="tipoGnomo">
@@ -135,7 +139,7 @@
         	</xs:extension>
       	</xs:simpleContent>
      </xs:complexType>
-  
+  	 
   	 <!-- PRINCESAS -->
  	 <!-- Existe un elemento con atributos y contenido texto. -->
  	 <!-- Una matrícula de coche española (tres caracteres en mayúscula y cuatro números) -->
@@ -208,11 +212,14 @@
   		<xs:attribute name="pelicula" type="xs:string"/>
   	  </xs:complexType>
   
-      <xs:complexType name="tipoGato">
-		<xs:attribute name="nombre" type="xs:string"/>
-  		<xs:attribute name="pelicula" type="xs:string"/>
- 	  </xs:complexType>
-  
+  	  <!-- Uso de <xs:all> -->
+  	  <xs:complexType name="tipoGato">
+    	<xs:all>
+     	 	<xs:element name="nombre" type="xs:string" />
+     		<xs:element name="pelicula" type="xs:string" />
+    	</xs:all>  
+  	  </xs:complexType>
+  	  
   	  <!--  Una dirección MAC (seis pares de números hexadecimales separados por ":").  -->
   	  <xs:complexType name="tipoOtros">
 		 <xs:attribute name="raza" type="xs:string"/>

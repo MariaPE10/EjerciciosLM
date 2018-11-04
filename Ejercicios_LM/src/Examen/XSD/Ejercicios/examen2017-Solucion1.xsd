@@ -26,22 +26,29 @@
 	
 	<xs:complexType name="tipoHada">
 		<xs:complexContent>
-      		<xs:extension base="caracHada">
-       			<xs:sequence>
-          			<xs:element name="talento" type="xs:string" />
-        		</xs:sequence>
- 				<xs:attribute name = "pelicula" type="xs:string"/>
-     		 </xs:extension>
-    	</xs:complexContent>
+			<xs:extension base="caracHada">
+				<xs:sequence>
+					<xs:element name="talento" type="xs:string"  minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name = "pelicula" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	
 	<!-- Uso de <xs:all> -->
+	<!-- Hola María, tu problema es que no se puede utilizar <xs:all> con la herencia (derivación) de tipos de datos complejos. Simplemente no está permitido por el hecho 
+	de que si utilizas el <xs:all> XSD encuentra el problema de que no sabe hasta donde tiene que permitir que los elmentos puedan aparecer en el tipo padre y en el tipo hijo
+	-->
+	<!-- Te propongo una solución, por si se adapta a lo que quieres. Se trata de cambiar <xs:all> por <xs:sequence>, teniendo en cuenta que he añadido un atributo "minOccurs"
+	a todos los elementos del padre y del hijo, de esa manera controlas que puedan aparecer o no aparecer en el elemento en el que aplicas el <xs:ComplexType> derivado (el hijo)
+	El problema de esta solución es que tus elementos no podrán aparecer desordenados. Te aporto otra solución en el fichero "examen2017-Solucion2.xsd"-->
+		
 	<xs:complexType name="caracHada">
-      <xs:all>
-     	 <xs:element name="nombre" type="xs:string" />
-    	 <xs:element name="color" type="xs:string" />
-  	  </xs:all> 
-  	</xs:complexType>
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+			<xs:element name="color" type="xs:string"  minOccurs="0"/>
+		</xs:sequence> 
+	</xs:complexType>
 	
  	<xs:complexType name="tipoGnomo">
 		<xs:attribute name="nombre" type="xs:string"/>
