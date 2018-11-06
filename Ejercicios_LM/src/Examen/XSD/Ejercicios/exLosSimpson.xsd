@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="simpsons" type= "tipoSimpsons"/>
+	
+	<!-- Este es el contenido del nodo padre Simpsons, que estan conectados con el "name" -->
+	<!-- Uso <xs:sequence> -->
+	<xs:complexType name="tipoSimpsons">
+		<xs:sequence>
+	  		<xs:element name="localidad" type="tipoLocalidad"  maxOccurs="1"/>
+	  		<xs:element name="pelicula" type="tipoPelicula"  maxOccurs="1"/>
+	  		<xs:element name="creador" type="tipoCreador"  maxOccurs="1"/>
+	  		<xs:element name="familia" type="tipoFamilia"  maxOccurs="unbounded"/>
+	  		<xs:element name="temporada" type="tipoTemporada"  maxOccurs="1"/>
+	  		<xs:element name="personajes" type="tipoPersonajes"/>
+	  		<xs:element name="colorPersonajes" type="tipoColorPersonajes"/>
+	  		<xs:element name="MongomeryBurns" type="tipoMongomeryBurns"/>	
+	  		<xs:element name="localidadesRivales" type="tipoLocalidadesRivales"/>
+	  		<xs:element name="Barney" type="tipoBarney"/>	
+	  	</xs:sequence>
+	</xs:complexType>
+	
+	<!--##################### CUANDO UN NODO TIENE SUB ELEMENTOS O ATRIBUTOS####################
+	############################## HAY QUE USAR SIEMPRE UN COMPLEXTYPE #########################-->
+	
+	<!--Existe un elemento cuyo contenido es vacío. Aqui se especifican los atributos del elemento localidad-->
+	<!-- Existe un elemento con atributos de diferentes tipos primitivos (al menos uno de cadena de caracteres 
+  	y otro de tipo numérico). -->
+	<xs:complexType name="tipoLocalidad">
+		<xs:attribute name="valor" type="xs:string"/>
+		<xs:attribute name="anioFundacion" type="xs:integer"/> 
+  	</xs:complexType>
+  	
+  	<!--Existe un elemento con contenido mixto (texto y subelementos).-->
+  	<xs:complexType name="tipoPelicula" mixed="true">
+		<xs:sequence>
+			<xs:element name="titulo" type = "xs:string"/>
+		</xs:sequence>
+  	</xs:complexType>
+  	
+  	<!-- Existe un elemento con atributos y contenido texto. -->
+  	<xs:complexType name="tipoCreador" mixed="true">
+		<xs:attribute name ="bso" type="xs:string"/>
+  	</xs:complexType>
+  	
+  	<!-- Existe un elemento con atributos y contenido de tipo numérico. -->
+  	 <xs:complexType name="tipoFamilia">
+     	<xs:simpleContent>
+       		<xs:extension base="xs:integer"> <!-- Nos indica el tipo de datos que hay dentro del nodo "Familia" -->
+          		<xs:attribute name="nombre" type="xs:string" />
+        	</xs:extension>
+      	</xs:simpleContent>
+     </xs:complexType>
+  	
+  	<!-- Uso <xs:choice> -->
+  	<xs:complexType name="tipoTemporada">
+		<xs:choice>
+			<xs:element name="tempoada01" type = "tipoVacio"/>
+			<xs:element name="tempoada02" type = "tipoVacio"/>
+			<xs:element name="tempoada03" type = "tipoVacio"/>
+		</xs:choice>
+  	</xs:complexType>
+  	
+  	<xs:complexType name="tipoVacio"/>
+  	
+  	<!-- Uso <xs:all> -->
+  	<xs:complexType name="tipoPersonajes">
+		<xs:all>
+			<xs:element name="Homer" type = "tipoVacio"/>
+			<xs:element name="Marge" type = "tipoVacio"/>
+			<xs:element name="Bart" type = "tipoVacio"/>
+			<xs:element name="Lisa" type = "tipoVacio"/>
+			<xs:element name="Maggie" type = "tipoVacio"/>
+			<xs:element name="Abuelo" type = "tipoVacio"/>
+		</xs:all>
+  	</xs:complexType>
+  	
+  	<!-- Existe un atributo que toma su valor de una lista de posibles valores -->
+   	<!-- Existe un atributo cuyo contenido debe ser un número dentro de un intervalo 
+  	numérico determinado, por ejemplo entre 100 y 1000. -->
+   	<xs:complexType name="tipoColorPersonajes">
+		<xs:attribute name="principal">
+			<xs:simpleType>
+  				<xs:restriction base="xs:string">
+  					<xs:enumeration value="amarillo"/>
+  					<xs:enumeration value="rojo"/>
+  					<xs:enumeration value="negro"/>
+  				</xs:restriction>
+ 			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="rojo" type="Numero100-1000"/>
+		<xs:attribute name="verde" type="Numero100-1000"/>
+		<xs:attribute name="azul" type="Numero100-1000"/>
+  	</xs:complexType>
+ 	
+  	<!-- Crea un tipo de datos simples que permite valores entre 100 y 1000 -->
+  	<xs:simpleType name="Numero100-1000">
+  		<xs:restriction base="xs:integer">
+  			<xs:minInclusive value="100"/>
+  			<xs:maxInclusive value="1000"/>
+  	 	</xs:restriction>
+  	 </xs:simpleType>
+  	
+  	<!-- Llevas a cabo y utilizas correctamente una expresión regular de alguno de los siguientes tipos. Cada tipo viene asignado a
+	una serie de personas determinadas, debes leer el final de este documento: -->
+  	<xs:complexType name="tipoMongomeryBurns">
+		<xs:attribute name = "dni">
+			<xs:simpleType>
+  				<xs:restriction base="xs:string"> 
+  					<xs:pattern value="[0-9]{8}([A-Z]|[a-z])"/> <!-- DNI Las letras escoge entre una mayuscula y una minuscula -->
+  				</xs:restriction>
+  			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name = "matricula"> 
+			<xs:simpleType>
+  				<xs:restriction base="xs:string">
+  					<xs:pattern value="[0-9]{4}[A-Z]{3}"/> <!-- Matricula -->
+  				</xs:restriction>
+  			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name = "mac">
+			<xs:simpleType>
+  				<xs:restriction base="xs:string">
+  					<xs:pattern value="([a-f|0-9|A-F]{2}[:]){5}[a-f|0-9|A-F]{2}"/> <!-- MAC -->
+  				</xs:restriction>
+  			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name = "color">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+  					<xs:pattern value="(amarillo)|(rojo)|(negro)"/> <!-- colores -->
+  				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+  	</xs:complexType>
+  	
+  	<!-- Existe un tipo de datos simple creado con <xs:list>. -->
+  	<xs:simpleType name="tipoLocalidadesRivales">
+		<xs:list itemType="localidadesRivales"/>
+	</xs:simpleType>
+  	
+  	<!-- Existe un tipo de datos simple creado con <xs:union>. -->
+  	<xs:simpleType name="localidadesRivales">
+  		<xs:union memberTypes="localidadesEspaniolas localidadesEstadounidenses"/>
+ 	</xs:simpleType>
+  	
+  	<!-- Listado de ciudades Españolas -->
+  	<xs:simpleType name="localidadesEspaniolas">
+  		<xs:restriction base="xs:string">
+  			<xs:enumeration value="Sevilla"/>
+  			<xs:enumeration value="Madrid"/>
+  			<xs:enumeration value="Barcelona"/>
+  		</xs:restriction>
+ 	</xs:simpleType>
+  	
+  	<!-- Listado de ciudades EstadoUnidenses -->
+  	<xs:simpleType name="localidadesEstadounidenses">
+  		<xs:restriction base="xs:string">
+  			<xs:enumeration value="New_York"/>
+  			<xs:enumeration value="Los_Angeles"/>
+  			<xs:enumeration value="Chicago"/>
+  		</xs:restriction>
+ 	</xs:simpleType>
+  	
+  	<!-- Existe un tipo de datos simple derivado de otro tipo de datos simple. -->
+  	<xs:complexType name="tipoBarney">
+  		<xs:attribute name="bebidaDiaria" type="bebidas"/>
+  		<xs:attribute name="bebidaFavorita" type="bebidasFavoritas"/>
+  	</xs:complexType>
+  	
+  	<!-- Listado de bebidas que puede beber Barney -->
+  	<xs:simpleType name="bebidas">
+  		<xs:restriction base="xs:string">
+  			<xs:enumeration value="Cerveza"/>
+  			<xs:enumeration value="Whiskey"/>
+  			<xs:enumeration value="Ron"/>
+  			<xs:enumeration value="Vodka"/>
+  		</xs:restriction>
+ 	</xs:simpleType>
+ 	
+ 	<xs:simpleType name="bebidasFavoritas">
+  		<xs:restriction base="bebidas">
+  			<xs:enumeration value="Cerveza"/>
+  			<xs:enumeration value="Whiskey"/>
+  		</xs:restriction>
+ 	</xs:simpleType>
+  
+  
+  
+  
+  
+  
+  
+  
+  	
+</xs:schema>
