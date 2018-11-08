@@ -15,7 +15,10 @@
 	  		<xs:element name="colorPersonajes" type="tipoColorPersonajes"/>
 	  		<xs:element name="MongomeryBurns" type="tipoMongomeryBurns"/>	
 	  		<xs:element name="localidadesRivales" type="tipoLocalidadesRivales"/>
-	  		<xs:element name="Barney" type="tipoBarney"/>	
+	  		<xs:element name="Barney" type="tipoBarney"/>
+	  		<xs:element name="Apu" type="tipoApu"/>
+	  		<xs:element name="Manjula" type="tipoManjula"/>	
+	  		<xs:element name="Hugo" type="tipoHugo"/>	
 	  	</xs:sequence>
 	</xs:complexType>
 	
@@ -174,6 +177,7 @@
   			<xs:enumeration value="Whiskey"/>
   			<xs:enumeration value="Ron"/>
   			<xs:enumeration value="Vodka"/>
+  			<xs:enumeration value="Vino"/>
   		</xs:restriction>
  	</xs:simpleType>
  	
@@ -184,12 +188,34 @@
   		</xs:restriction>
  	</xs:simpleType>
   
+  <!-- Existe un tipo de datos complejo derivado de otro tipo de datos complejo. -->
+  <!-- Mirar los date time para el examen --> 
+  <xs:complexType name="tipoApu">
+  	<xs:sequence>
+  		<xs:element name="apodo" type= "xs:string"/>
+  	</xs:sequence>
+  	<xs:attribute name="fechaNacimiento" type="xs:string"/>
+  </xs:complexType>
   
+  <xs:complexType name="tipoManjula">
+  	<xs:complexContent>
+  		<xs:extension base="tipoApu">
+  			<xs:sequence>
+				<xs:element name="DiosPreferido" type= "xs:string"/>  			
+  			</xs:sequence>
+  			<xs:attribute name="nacionalidad" type="xs:string"/>
+  		</xs:extension>
+  	</xs:complexContent>
+  </xs:complexType>
   
-  
-  
-  
-  
+  <!-- Permite poner los nodos desordenados y repetirlos -->
+  <xs:complexType name="tipoHugo">
+  	<xs:choice maxOccurs="unbounded">
+  		<xs:element name="edad" type="xs:string"/>
+  		<xs:element name="ladoCicatriz" type="xs:string"/>
+  		<xs:element name="aficiones" type="xs:string"/>
+  	</xs:choice>
+  </xs:complexType>
   
   	
 </xs:schema>

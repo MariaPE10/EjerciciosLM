@@ -24,5 +24,18 @@ xsi:noNamespaceSchemaLocation="exLosSimpson.xsd">
 	<MongomeryBurns dni="47555143W" matricula="0001ABX" mac="14:e3:a5:35:87:ef" color="amarillo"/>
 	<localidadesRivales>Sevilla New_York</localidadesRivales>
 	<Barney bebidaDiaria="Cerveza" bebidaFavorita="Cerveza"/>
+	<Apu fechaNacimiento="23-11-18">
+		<apodo>Apuchu</apodo>
+	</Apu>
+	<Manjula fechaNacimiento="05-12-18" nacionalidad="India">
+		<apodo>Manjuchu</apodo>
+		<DiosPreferido>Shiva</DiosPreferido>
+	</Manjula>
+	<Hugo>
+		<edad>8</edad>
+		<ladoCicatriz>derecho</ladoCicatriz>
+		<aficiones>coser pajaros</aficiones>
+		<aficiones>correr</aficiones>
+	</Hugo>
 </simpsons>
 
