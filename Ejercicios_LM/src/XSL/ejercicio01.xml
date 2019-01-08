@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejercicio01.xsl"?>
+
+<navidad>
+  <almuerzo>
+  	<primerPlato>Patatas bravas</primerPlato>
+  	<segundoPlato>Entrecor de ternera 1ª</segundoPlato>
+  	<postre>Natillas con Galleta</postre>
+  	<bebida>Licor de Manzana 0.0</bebida>
+  	<sobremesa>
+  		<primeraBebida>Coca-cola</primeraBebida>
+  		<segundaBebida>Fanta de Naranja</segundaBebida>
+  		<terceraBebida>Mosto</terceraBebida>
+  	</sobremesa>
+  </almuerzo>
+</navidad>
