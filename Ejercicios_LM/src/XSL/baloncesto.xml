@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="baloncesto.xsl"?>
+
+<ligaEndesa>
+	<fechaCreacion>2010-2011</fechaCreacion>
+	<nombreCompleto>Liga Baloncesto Endesa</nombreCompleto>
+	<equipos>16
+		<nombre1>UniCaja</nombre1>
+		<nombre2>Estudiantes</nombre2>
+		<nombre3>Fanatic</nombre3>
+	</equipos>
+</ligaEndesa>
