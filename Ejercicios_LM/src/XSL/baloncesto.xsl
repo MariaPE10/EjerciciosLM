@@ -41,16 +41,13 @@
 	</xsl:template>
 	
 	<xsl:template match="equipos">
-		<p> Número de equipos: <xsl:value-of select="."/>
-			<xsl:apply-templates/>
+		<p> Número de equipos:
+			<ul> 
+				<li>Nombre: <xsl:value-of select="nombre1"/></li>
+				<li>Nombre: <xsl:value-of select="nombre2"/></li>
+				<li>Nombre: <xsl:value-of select="nombre3"/></li>
+			</ul>
 		</p>
 	</xsl:template>
 	
-	<xsl:template match="nombre">
-		<ul class = "negrita"> 
-		<li>Nombre: <xsl:value-of select="nombre1"/></li>
-		<li>Nombre: <xsl:value-of select="nombre2"/></li>
-		<li>Nombre: <xsl:value-of select="nombre3"/></li>
-		</ul>
-	</xsl:template>
 </xsl:stylesheet>
