@@ -16,6 +16,7 @@
 					<th>Gormiti</th>
 					<th>Tribu</th>
 				</tr>
+				<!-- Apartado A -->
 				<xsl:for-each select="gormiti">
 					<xsl:choose>
 						<xsl:when test="position() mod 2 = 1">
@@ -32,6 +33,20 @@
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:for-each>
+			</table>
+			<p/>
+			<!-- Apartado B -->
+			<table width="95%" style="background: #ffff00">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
 			</table>
 			</body>
 		</html>
