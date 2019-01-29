@@ -21,13 +21,13 @@
 					<xsl:choose>
 						<xsl:when test="position() mod 2 = 1">
 							<xsl:call-template name="filaEnTablaGormiti">
-								<xsl:with-param name="color">#c4daff</xsl:with-param>
+								<xsl:with-param name="color">#ffffff</xsl:with-param>
 								<xsl:with-param name="img"><xsl:value-of select="."/></xsl:with-param>
 							</xsl:call-template>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:call-template name="filaEnTablaGormiti">
-								<xsl:with-param name="color">#ffffff</xsl:with-param>
+								<xsl:with-param name="color">#c4daff</xsl:with-param>
 								<xsl:with-param name="img"><xsl:value-of select="."/></xsl:with-param>
 							</xsl:call-template>
 						</xsl:otherwise>
@@ -36,22 +36,58 @@
 			</table>
 			<p/>
 			<!-- Apartado B -->
-			<table width="95%" style="background: #ffff00">
+			<!-- Asi se puede poner una imagen como fondo de una tabla -->
+			<!-- Para poner un XPATH dentro de una marca podemos usar las llaves -->
+			<!-- Los "@" sirven para marcar los atributos y los "$" para sacar el contenido de dicho atributo -->
+			<table width="95%" border= "1" style="background: url('{tablero/@url}') no-repeat;">
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
+					<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">1</xsl:with-param>		
+	      				<xsl:with-param name="y">1</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">2</xsl:with-param>		
+	      				<xsl:with-param name="y">1</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">3</xsl:with-param>		
+	      				<xsl:with-param name="y">1</xsl:with-param>		
+	      			</xsl:call-template>  
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
+					<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">1</xsl:with-param>		
+	      				<xsl:with-param name="y">2</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">2</xsl:with-param>		
+	      				<xsl:with-param name="y">2</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">3</xsl:with-param>		
+	      				<xsl:with-param name="y">2</xsl:with-param>		
+	      			</xsl:call-template>
+				</tr>
+				<tr>
+					<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">1</xsl:with-param>		
+	      				<xsl:with-param name="y">3</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">2</xsl:with-param>		
+	      				<xsl:with-param name="y">3</xsl:with-param>		
+	      			</xsl:call-template>       	
+	      			<xsl:call-template name="celda">
+	      				<xsl:with-param name="x">3</xsl:with-param>		
+	      				<xsl:with-param name="y">3</xsl:with-param>		
+	      			</xsl:call-template>    
 				</tr>
 			</table>
 			</body>
 		</html>
 	</xsl:template>
 	
+	<!-- Apartado A -->
 	<!-- Esta es otra forma de llamar a un "param" sin usar un atributo -->
 	<xsl:template name="filaEnTablaGormiti">
 		<xsl:param name="color"/>
@@ -61,6 +97,27 @@
 			<td><img src="{.}"/></td>
 			<td><xsl:value-of select="@tribu"/></td>
 		</tr>
+	</xsl:template>
+	
+	<!-- Apartado B -->
+	<xsl:template name="celda">
+		<xsl:param name="x"/>
+		<xsl:param name="y"/>
+
+
+		<td>
+		<xsl:for-each select="tablero/gormitiEnMapa">
+		<!-- Creacion de una variable para renombrar un atributo, ya que no se puede acceder a dos atributos
+		que tengan el mismo nombre. -->
+		<!-- Los corchetes se utilizan para tratar a los nodos como un array -->
+			<xsl:variable name="nombreTribu"><xsl:value-of select="@tribu"/></xsl:variable>
+			<xsl:choose>
+				<xsl:when test="@x = $x and @y = $y ">
+					<img src="{/gormitis/gormiti[@tribu=$nombreTribu]}"/>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>	
+		</td>
 	</xsl:template>
 	
 	<xsl:template name="css">
@@ -80,6 +137,11 @@
 	      text-align: center;
 	      background: #1051ba;
 	      color: #ffffff;
+	      }
+	      
+	      td {
+	      	height: 100px;
+	      	text-align:center;
 	      }
 	      
 	      img {
