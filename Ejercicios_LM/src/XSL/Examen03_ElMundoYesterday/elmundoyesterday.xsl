@@ -30,6 +30,55 @@
 						  </xsl:for-each>
 			            </ul>
          			</div>
+         			<div style="width: 700px; float: left;">
+         				<xsl:for-each select="noticias/noticia">
+         					<xsl:choose>
+         						<xsl:when test="@dobleAncho = 's'">
+         							<div class="noticiaDobleAncho">
+         								<h2> 
+         									<xsl:value-of select="titular"></xsl:value-of>
+         								</h2>
+         								<h4>
+         									<xsl:value-of select="subtitular"></xsl:value-of>
+         								</h4>
+         								<img src="{@imagen}" />
+         								<br/>
+         								<span class= "fechaNoticia">
+         									<xsl:value-of select="@fecha"></xsl:value-of>
+         								</span>
+         								<span class = "comentariosNoticia">
+         									<xsl:value-of select="@comentarios"></xsl:value-of>
+         								</span>
+         							</div>
+         						</xsl:when>
+         						<xsl:when test="@dobleAncho = 'n'">
+         							<div class="noticia">
+         								<h2> 
+         									<xsl:value-of select="titular"></xsl:value-of>
+         								</h2>
+         								<h4>
+         									<xsl:value-of select="subtitular"></xsl:value-of>
+         								</h4>
+         								<img src="{@imagen}" />
+         								<br/>
+         								<span class= "fechaNoticia">
+         									<xsl:value-of select="@fecha"></xsl:value-of>
+         								</span>
+         								<span class = "comentariosNoticia">
+         									<xsl:value-of select="@comentarios"></xsl:value-of>
+         								</span>
+         							</div>
+         						</xsl:when>
+         					</xsl:choose>
+         				</xsl:for-each>
+         			</div>
+         			<div style="width: 295px; float: right;">
+         				<xsl:for-each select="publicidad/anuncio">
+         					<div  class = "divPublicidad">
+         						<img src = "{@imagen}"/>
+         					</div>
+         				</xsl:for-each>
+         			</div>
          		</div>
 			</body>
 		</html>
@@ -103,7 +152,7 @@
            }
            
            .divPublicidad img {
-           width: 200px;
+           width: 280px;
            }
 		</style>
 	</xsl:template>
