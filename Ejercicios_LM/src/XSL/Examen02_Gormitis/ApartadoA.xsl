@@ -103,8 +103,6 @@
 	<xsl:template name="celda">
 		<xsl:param name="x"/>
 		<xsl:param name="y"/>
-
-
 		<td>
 		<xsl:for-each select="tablero/gormitiEnMapa">
 		<!-- Creacion de una variable para renombrar un atributo, ya que no se puede acceder a dos atributos

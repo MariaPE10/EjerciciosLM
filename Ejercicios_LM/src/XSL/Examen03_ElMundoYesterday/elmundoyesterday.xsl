@@ -87,8 +87,7 @@
 	<xsl:template name="filaEnMenu">
 		<xsl:param name="color"/>
 		<li style="background: {$color}">
-			<td><xsl:value-of select="position()"/></td>
-			<td><xsl:value-of select="."/></td>
+			<xsl:value-of select="."/>
 		</li>
 	</xsl:template>
 	
