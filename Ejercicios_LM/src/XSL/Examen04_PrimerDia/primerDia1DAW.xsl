@@ -406,6 +406,8 @@
 			<tr>
 			<td><xsl:value-of select="@desc"/></td>
 			<xsl:for-each select="hora">
+				<!-- Con el sort se ordenan segun el atributo orden de cada día -->
+				<xsl:sort select ="@orden" order="ascending" />
 				<td>
 					<xsl:choose>
 						<xsl:when test=".='ENT DES'">

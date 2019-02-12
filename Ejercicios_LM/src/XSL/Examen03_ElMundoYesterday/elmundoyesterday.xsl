@@ -6,7 +6,7 @@
 	<xsl:template match="/periodico">
 		<html>
 			<head>
-				<title>El Mundo Yesterday</title>
+				<title><xsl:value-of select="@nombre"/></title>
 				<xsl:call-template name="css"/>
 			</head>
 			<body>
@@ -47,7 +47,7 @@
          									<xsl:value-of select="@fecha"></xsl:value-of>
          								</span>
          								<span class = "comentariosNoticia">
-         									<xsl:value-of select="@comentarios"></xsl:value-of>
+         									<xsl:value-of select="@comentarios"/> comentarios
          								</span>
          							</div>
          						</xsl:when>
@@ -87,7 +87,9 @@
 	<xsl:template name="filaEnMenu">
 		<xsl:param name="color"/>
 		<li style="background: {$color}">
-			<xsl:value-of select="."/>
+			<a href="{@href}">
+				<xsl:value-of select="."/>
+			</a>
 		</li>
 	</xsl:template>
 	

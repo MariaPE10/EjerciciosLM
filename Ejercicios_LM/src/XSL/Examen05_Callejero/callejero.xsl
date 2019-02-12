@@ -41,6 +41,7 @@
 			<table width="70%" border = "1">
 				<xsl:apply-templates select = "calle"/>
 			</table>
+			
 			</body>
 		</html>
 	</xsl:template>
