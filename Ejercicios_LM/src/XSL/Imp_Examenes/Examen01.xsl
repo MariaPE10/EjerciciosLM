@@ -60,19 +60,19 @@
 	</xsl:template>
 	
 	<xsl:template name="bucleForFila">
-  	<xsl:param name="i"/>
-  	<xsl:if test="$i &lt;= 11">
-  		<tr>
-	  		<xsl:call-template name="bucleForColumna">
-	  			<xsl:with-param name="i"><xsl:value-of select="$i"/></xsl:with-param>
-	  			<xsl:with-param name="j">1</xsl:with-param>
-	  		</xsl:call-template>
-	  		<xsl:call-template name="bucleForFila">
-	  			<xsl:with-param name="i"><xsl:value-of select="$i + 1"/></xsl:with-param>
-	  		</xsl:call-template>
-  		</tr>
-  	</xsl:if>
-  </xsl:template>
+	  	<xsl:param name="i"/>
+	  	<xsl:if test="$i &lt;= 11">
+	  		<tr>
+		  		<xsl:call-template name="bucleForColumna">
+		  			<xsl:with-param name="i"><xsl:value-of select="$i"/></xsl:with-param>
+		  			<xsl:with-param name="j">1</xsl:with-param>
+		  		</xsl:call-template>
+		  		<xsl:call-template name="bucleForFila">
+		  			<xsl:with-param name="i"><xsl:value-of select="$i + 1"/></xsl:with-param>
+		  		</xsl:call-template>
+	  		</tr>
+	  	</xsl:if>
+  	</xsl:template>
 
 
   <xsl:template name="bucleForColumna">
